@@ -1,0 +1,11 @@
+fastapi[all]
+strawberry-graphql[fastapi]==0.158.0
+pydantic
+python-dotenv
+uvicorn==0.22.0
+# graphene
+# graphene-sqlalchemy
+# sqlalchemy
+
+masonite-orm==2.18.6
+psycopg2-binary==2.9.5

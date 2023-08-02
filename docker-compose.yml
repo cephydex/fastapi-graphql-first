@@ -1,0 +1,23 @@
+version: "3.8"
+services:    
+    app:
+      build: .
+      container_name: graphql-api
+      restart: "unless-stopped"
+      ports:
+        - "5002:8000"
+      volumes:
+        - ".:/code"
+
+    db:
+      container_name: graphql-db
+      image: postgres
+      restart: always
+      ports:
+        - "5003:5432"
+      # volumes:
+      #   - ./db:/var/lib/postgresql/data
+      environment:
+        POSTGRES_USER: app_user
+        POSTGRES_PASSWORD: app_pass
+        POSTGRES_DB: graphql01
